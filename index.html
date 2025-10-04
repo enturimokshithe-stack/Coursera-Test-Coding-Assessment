@@ -47,4 +47,38 @@
       <label for="guests">Number of Guests:</label>
       <select id="guests" required>
         <option value="">Select</option>
-        <o
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5+">5+</option>
+      </select>
+      <button type="submit">Reserve Table</button>
+    </form>
+    <div class="message" id="confirmationMessage"></div>
+  </div>
+  <script>
+    document.getElementById('reservationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const guests = document.getElementById('guests').value;
+      if (!name || !email || !date || !time || !guests) {
+        alert("Please fill in all fields.");
+        return;
+      }
+      const confirmationMessage = `
+        Thank you, <strong>${name}</strong>!<br>
+        Your table for <strong>${guests}</strong> has been reserved on <strong>${date}</strong> at <strong>${time}</strong>.<br>
+        A confirmation has been sent to <strong>${email}</strong>.
+      `;
+      const messageDiv = document.getElementById('confirmationMessage');
+      messageDiv.innerHTML = confirmationMessage;
+      messageDiv.style.display = 'block';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
