@@ -5,77 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Restaurant Table Reservation</title>
   <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background-color: #f2f2f2; margin: 0; padding: 0; }
     .container {
-      max-width: 500px;
-      margin: 50px auto;
-      padding: 30px;
-      background-color: white;
-      border-radius: 10px;
+      max-width: 500px; margin: 50px auto; padding: 30px;
+      background-color: white; border-radius: 10px;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-      color: #444;
-    }
-
+    h2 { text-align: center; margin-bottom: 20px; color: #333; }
+    label { display: block; margin-bottom: 5px; font-weight: bold; color: #444; }
     input, select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      width: 100%; padding: 10px; margin-bottom: 15px;
+      border-radius: 5px; border: 1px solid #ccc;
     }
-
     button {
-      width: 100%;
-      padding: 12px;
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
-      cursor: pointer;
+      width: 100%; padding: 12px; background-color: #28a745;
+      color: white; border: none; border-radius: 5px;
+      font-size: 16px; cursor: pointer;
     }
-
-    button:hover {
-      background-color: #218838;
-    }
-
+    button:hover { background-color: #218838; }
     .message {
-      margin-top: 20px;
-      padding: 15px;
-      background-color: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-      border-radius: 5px;
+      margin-top: 20px; padding: 15px;
+      background-color: #d4edda; color: #155724;
+      border: 1px solid #c3e6cb; border-radius: 5px;
       display: none;
-    }
-
-    .error {
-      color: red;
-      font-size: 14px;
-      margin-top: -10px;
-      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -85,60 +38,13 @@
     <form id="reservationForm">
       <label for="name">Full Name:</label>
       <input type="text" id="name" required />
-
       <label for="email">Email:</label>
       <input type="email" id="email" required />
-
       <label for="date">Reservation Date:</label>
       <input type="date" id="date" required />
-
       <label for="time">Reservation Time:</label>
       <input type="time" id="time" required />
-
       <label for="guests">Number of Guests:</label>
       <select id="guests" required>
         <option value="">Select</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5+">5+</option>
-      </select>
-
-      <button type="submit">Reserve Table</button>
-    </form>
-
-    <div class="message" id="confirmationMessage"></div>
-  </div>
-
-  <script>
-    document.getElementById('reservationForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const date = document.getElementById('date').value;
-      const time = document.getElementById('time').value;
-      const guests = document.getElementById('guests').value;
-
-      if (!name || !email || !date || !time || !guests) {
-        alert("Please fill in all fields.");
-        return;
-      }
-
-      const confirmationMessage = `
-        Thank you, <strong>${name}</strong>!<br>
-        Your table for <strong>${guests}</strong> has been reserved on <strong>${date}</strong> at <strong>${time}</strong>.<br>
-        A confirmation has been sent to <strong>${email}</strong>.
-      `;
-
-      const messageDiv = document.getElementById('confirmationMessage');
-      messageDiv.innerHTML = confirmationMessage;
-      messageDiv.style.display = 'block';
-
-      // Reset form
-      document.getElementById('reservationForm').reset();
-    });
-  </script>
-</body>
-</html>
+        <o
